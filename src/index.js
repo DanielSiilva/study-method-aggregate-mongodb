@@ -2,7 +2,8 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const express = require("express");
 const shemaDb = require("./shema");
-
+const MetodFind = require("./find");
+const MetodAggregation = require("./aggregate");
 const app = express();
 
 mongoose
@@ -17,26 +18,12 @@ mongoose
     console.log("connection failed", error);
   });
 
-const model = mongoose.model("heros", shemaDb);
-
-async function searchData() {
-  try {
-    const documentos = await model.find({});
-    // console.log("documentos", documentos);
-
-    const filter = await model
-      .aggregate([{ $match: { name: "Hulk" } }, { $count: "total_doc" }])
-      .exec();
-
-    console.log("Filter", filter);
-  } catch (err) {
-    console.error(err);
-  }
-}
+//const model = mongoose.model("heros", shemaDb);
 
 (async () => {
   try {
-    await searchData();
+    //await MetodFind();
+    await MetodAggregation();
   } catch (err) {
     console.error(err);
   }
