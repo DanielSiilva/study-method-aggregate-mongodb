@@ -20,8 +20,24 @@ mongoose
 const model = mongoose.model("heros", shemaDb);
 
 async function searchData() {
-  const documentos = await model.find({});
-  console.log("documentos", documentos);
+  try {
+    const documentos = await model.find({});
+    // console.log("documentos", documentos);
+
+    const filter = await model
+      .aggregate([{ $match: { name: "Hulk" } }, { $count: "total_doc" }])
+      .exec();
+
+    console.log("Filter", filter);
+  } catch (err) {
+    console.error(err);
+  }
 }
 
-searchData().catch((err) => console.error(err));
+(async () => {
+  try {
+    await searchData();
+  } catch (err) {
+    console.error(err);
+  }
+})();
