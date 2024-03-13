@@ -4,6 +4,7 @@ const express = require("express");
 const shemaDb = require("./shema");
 const MetodFind = require("./find");
 const MetodAggregation = require("./aggregate");
+const MetodUpdateOne = require("./updateOne");
 const app = express();
 
 mongoose
@@ -23,7 +24,8 @@ mongoose
 (async () => {
   try {
     //await MetodFind();
-    await MetodAggregation();
+    //await MetodAggregation();
+    await MetodUpdateOne();
   } catch (err) {
     console.error(err);
   }
