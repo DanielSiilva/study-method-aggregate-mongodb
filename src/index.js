@@ -1,6 +1,7 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
 const express = require("express");
+const shemaDb = require("./shema");
 
 const app = express();
 
@@ -15,3 +16,12 @@ mongoose
   .catch((error) => {
     console.log("connection failed", error);
   });
+
+const model = mongoose.model("heros", shemaDb);
+
+async function searchData() {
+  const documentos = await model.find({});
+  console.log("documentos", documentos);
+}
+
+searchData().catch((err) => console.error(err));
