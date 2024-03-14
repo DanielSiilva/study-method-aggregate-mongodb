@@ -7,6 +7,7 @@ const MetodAggregation = require("./aggregate");
 const MetodUpdateOne = require("./updateOne");
 const MetodoUpdateMany = require("./updateMany");
 const MetodoDeleteOne = require("./deleteOne");
+const MetodoDeleteMany = require("./deleteMany");
 const app = express();
 
 mongoose
@@ -29,7 +30,8 @@ mongoose
     //await MetodAggregation();
     //await MetodUpdateOne();
     //await MetodoUpdateMany();
-    await MetodoDeleteOne();
+    //await MetodoDeleteOne();
+    await MetodoDeleteMany();
   } catch (err) {
     console.error(err);
   }
