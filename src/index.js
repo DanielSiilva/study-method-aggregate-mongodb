@@ -6,6 +6,7 @@ const MetodFind = require("./find");
 const MetodAggregation = require("./aggregate");
 const MetodUpdateOne = require("./updateOne");
 const MetodoUpdateMany = require("./updateMany");
+const MetodoDeleteOne = require("./deleteOne");
 const app = express();
 
 mongoose
@@ -27,7 +28,8 @@ mongoose
     //await MetodFind();
     //await MetodAggregation();
     //await MetodUpdateOne();
-    await MetodoUpdateMany();
+    //await MetodoUpdateMany();
+    await MetodoDeleteOne();
   } catch (err) {
     console.error(err);
   }
