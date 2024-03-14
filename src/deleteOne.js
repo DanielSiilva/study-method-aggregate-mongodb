@@ -7,7 +7,7 @@ const model = mongoose.model("heros", shemaDb);
 
 async function MetodoDeleteOne() {
   try {
-    const deleteOne = model.deleteOne({ name: "Iron Man" });
+    const deleteOne = model.deleteOne({ name: "Iron Man" }).exec();
 
     console.log("deleteOne", deleteOne);
   } catch (error) {

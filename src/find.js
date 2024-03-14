@@ -9,7 +9,7 @@ async function MetodFind() {
     const findAll = await model.find({});
 
     //Buscar documentos por critério: Encontrar todos os documentos que correspondem a um critério específico.
-    const findUnique = await model.find({ name: "Iron Man" });
+    const findUnique = await model.find({ name: "Iron Man" }).exec();
 
     console.log("Metodo find - Todos", findAll);
 

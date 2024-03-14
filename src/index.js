@@ -27,12 +27,12 @@ mongoose
 
 (async () => {
   try {
-    //await MetodFind();
-    //await MetodAggregation();
-    //await MetodUpdateOne();
-    //await MetodoUpdateMany();
-    //await MetodoDeleteOne();
-    //await MetodoDeleteMany();
+    await MetodFind();
+    await MetodAggregation();
+    await MetodUpdateOne();
+    await MetodoUpdateMany();
+    await MetodoDeleteOne();
+    await MetodoDeleteMany();
     await MetodoAggregateProject();
   } catch (err) {
     console.error(err);
